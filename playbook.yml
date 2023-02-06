@@ -1,0 +1,11 @@
+---
+- hosts: all
+  pre_tasks:
+    - name: update cache
+      apt:
+        update_cache: yes
+  roles:
+    - role: geerlingguy.pip
+      vars:
+        pip_install_packages:
+          - name: docker
